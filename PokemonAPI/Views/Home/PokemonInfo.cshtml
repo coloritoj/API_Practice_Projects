@@ -1,0 +1,29 @@
+﻿@model Pokemon
+@{
+    ViewData["Title"] = "PokemonInfo";
+}
+
+<h1>Pokemon Info</h1>
+
+Pokemon Name: @Model.name
+<br />
+Pokemon Weight: @Model.weight
+<br />
+Pokemon Type(s):
+<ul>
+    @foreach (Types pokemonType in Model.types)
+            {
+                <li>
+                    Slot @pokemonType.slot: @pokemonType.type.name
+                </li>
+            }
+</ul>
+Pokemon Moves:
+<ul>
+    @foreach (Moves pokemonMove in Model.moves)
+            {
+                <li>
+                    @pokemonMove.move.name
+                </li>
+            }
+</ul>
